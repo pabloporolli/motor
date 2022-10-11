@@ -1,5 +1,4 @@
 import React, { useState } from 'react'
-import { Link } from 'react-router-dom';
 import ItemListContainer from './components/ItemListContainer';
 
 const Buscador = () => {
@@ -11,18 +10,16 @@ const Buscador = () => {
 
     const [consultaHecha, setConsultaHecha] = useState(false);
 
-    let consulta = ('');
+    let [consulta, setConsulta] = useState('');
     const handleSubmit = (event) => {
         event.preventDefault();
-        consulta = {
+        setConsulta ({
             fechaIn: fechaIn,
             fechaOut: fechaOut,
             cantidadAdultos: cantidadAdultos,
             cantidadHabitaciones: cantidadHabitaciones,
-        }
+        })
         setConsultaHecha(true);
-        console.log("Objeto: ", consulta);
-        console.log(consultaHecha);
         return consulta;
     }
 
@@ -43,12 +40,12 @@ const Buscador = () => {
     }
 
   return (
-    consulta ?
-        <ItemListContainer />
+    consultaHecha ?
+        <ItemListContainer consulta={consulta} />
     : 
     <div className='contenedorBuscador'>
         <h3 className='tituloConsulta'>Consulte disponibilidad</h3>
-        <form action="" onSubmit={handleSubmit}>
+        <form action="" >
             <input type="date" required name='fechaIn' min="2023-01-01" max="2023-03-31" className='rectangulo' value={fechaIn} placeholder = 'Fecha de ingreso' onChange={handleFechaIn}/>
             <input type="date" required name='fechaOut' min="2023-01-01" max="2023-03-31" className='rectangulo' value={fechaOut} placeholder = 'Fecha de egreso'onChange={handleFechaOut}/>
             <select name="cantidadAdultos" id="CantidadAdultos" className='rectangulo' placeholder='Cantidad de adultos' onChange={handleCantidadAdultos}>
@@ -65,7 +62,7 @@ const Buscador = () => {
                 <option value="3">3 habitaciones</option>
                 <option value="4">4 habitaciones</option>
             </select>
-                <button className='botonConsultar'>Consultar</button>
+                <button onClick={handleSubmit} className='botonConsultar'>Consultar</button>
         </form>
     </div>
     )

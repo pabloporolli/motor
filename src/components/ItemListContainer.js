@@ -6,13 +6,13 @@ import styles from './item.module.css'
 // import { Button } from 'react-bootstrap';
 
 // Este componente filtra las habitaciones segun la disponibilidad (fechas enviadas como props por el buscador)
-const ItemListContainer = () => {
+const ItemListContainer = ({consulta}) => {
 
   // Esas fechas serán reemplazadas por las que lleguen por props
-  const fechaIn = DateTime.fromISO("2023-01-11")
-  const fechaOut = DateTime.fromISO("2023-01-13")
-  // const cantidadHabitaciones = 1
-  // const cantidadAdultos = 2
+  const fechaIn = DateTime.fromISO(consulta.fechaIn)
+  const fechaOut = DateTime.fromISO(consulta.fechaOut)
+//   const cantidadHabitaciones = consulta.cantidadHabitaciones
+//   const cantidadAdultos = consulta.cantidadAdultos
 
   // Se crea un array con todas las fechas de estadía 
   const durationInterval = Duration.fromISOTime('24:00')
