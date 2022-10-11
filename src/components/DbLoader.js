@@ -3,6 +3,7 @@ import React from 'react'
 import { Habitaciones } from "../Habitaciones";
 import { db } from "../firebaseConfig";
 
+// COMPONENTE CREADO PARA CARGAR LAS HABITACIONES POR ÚNICA VEZ A FIREBASE
 const DbLoader = () => {
     const habs = collection(db, 'habitaciones')
 

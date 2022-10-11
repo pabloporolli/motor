@@ -1,3 +1,5 @@
+// Archivo base para subir habitaciones a Firebase
+
 export const Habitaciones = [
     {
     name: "Standard Room",
