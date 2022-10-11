@@ -21,3 +21,27 @@ body {
 .contenedorBuscador {
   margin: 3rem;
 }
+
+.rectangulo {
+  height: 3rem;
+  margin-right: 1rem;
+  margin-top: 2rem;
+}
+
+.botonConsultar {
+  height: 3rem;
+  background-color: black;
+  border-style: none;
+  color: white;
+  width: 8rem;
+  text-transform: uppercase;
+}
+
+.botonConsultar:hover {
+  color: gray;
+}
+
+.tituloConsulta {
+  text-transform: uppercase;
+  letter-spacing: 0.2rem;
+}

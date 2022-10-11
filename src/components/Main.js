@@ -1,6 +1,7 @@
 import React from 'react'
 import { Route, Routes } from 'react-router-dom';
 import ItemListContainer from './ItemListContainer';
+import Buscador from '../Buscador';
 
 const Main = () => {
   return (
@@ -8,13 +9,13 @@ const Main = () => {
     <Routes>
       <Route
         path = "/"
-        element = {<ItemListContainer />}
+        element = {<Buscador />}
       />
-{/*       <Route
-        path = "/category/:categoryName"
+{/*        <Route
+        path = "/consulta"
         element = {<ItemListContainer />}
-       />
-       <Route
+       /> */}
+{/*        <Route
         path = "/detail/:idProd"
         element = {}
       />

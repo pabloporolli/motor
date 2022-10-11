@@ -14,7 +14,6 @@ const App = () => {
       <BrowserRouter>
         <Header />
         <Carousel/>
-        <Buscador />
         <Main />
         <Footer/>
       </BrowserRouter>
