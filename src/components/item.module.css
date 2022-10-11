@@ -10,3 +10,11 @@
     width: 200px;
     margin: 20px;
 }
+
+.btnReadMore {
+    border: none;
+    background-color: white;
+    text-decoration: underline;
+    color: blue
+
+}

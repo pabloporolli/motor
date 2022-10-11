@@ -11,8 +11,11 @@ const ItemListContainer = () => {
   // Esas fechas serán reemplazadas por las que lleguen por props
   const fechaIn = DateTime.fromISO("2023-01-11")
   const fechaOut = DateTime.fromISO("2023-01-13")
-  const durationInterval = Duration.fromISOTime('24:00')
+  // const cantidadHabitaciones = 1
+  // const cantidadAdultos = 2
 
+  // Se crea un array con todas las fechas de estadía 
+  const durationInterval = Duration.fromISOTime('24:00')
   let fechasEstadia = []
   let i = fechaIn
   while (i < fechaOut) {
@@ -46,7 +49,7 @@ const ItemListContainer = () => {
         
         // Elimina la habitación del array si no está disponible
         if (inventario === 0) {
-          habDispo = habDispo.filter((el) => el.name != habABuscar.name)
+          habDispo = habDispo.filter((el) => el.name !== habABuscar.name)
         } 
       })
     })
@@ -54,20 +57,19 @@ const ItemListContainer = () => {
   }
 
   chequearHabDisponibles()
-  console.log(habDispo)
 
   return (
     <div className={styles.itemListContainer}>
-         {/* <Button variant="primary">Item List Container</Button>{' '} */}
-         {habDispo.length == 0 ?
+        {/* <Button variant="primary">Item List Container</Button>{' '} */}
+        {habDispo.length === 0 ?
           <p>No hay habitaciones disponibles</p>
-        :
-        <>
-         <h3>Check In: {fechaIn.toLocaleString()} - Check Out: {fechaOut.toLocaleString()}</h3>
-         <h4>Habitaciones disponibles:</h4>
-         <ItemList habitaciones={habDispo} />
-         </>
-         }
+          :
+          <>
+          <h3>Check In: {fechaIn.toLocaleString()} - Check Out: {fechaOut.toLocaleString()}</h3>
+          <h4>Habitaciones disponibles:</h4>
+          <ItemList habitaciones={habDispo} />
+          </>
+        }
     </div>
   )
 }

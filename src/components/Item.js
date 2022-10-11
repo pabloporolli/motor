@@ -5,14 +5,13 @@ import styles from './item.module.css'
 const Item = ({hab}) => {
   const [readMore, setReadMore] = useState(false)
 
-
   return (
     <tr className={styles.fichaHab}> 
-        <td><img src={`${hab.img}`}/></td>
+        <td><img src={`${hab.img}`} alt={hab.name}/></td>
         <td>{hab.name}</td>
         <td>  {hab.description} 
-              <a onClick={()=>setReadMore(!readMore)}> -- más info</a>
-              {!readMore && 
+              <button className={styles.btnReadMore} onClick={()=>setReadMore(!readMore)}>{readMore? <p>-- menos info</p> : <p>-- más info</p>}</button>
+              {readMore && 
               <>
               <p>Amenities</p>
               <ul>
