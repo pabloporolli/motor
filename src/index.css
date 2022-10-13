@@ -45,3 +45,16 @@ body {
   text-transform: uppercase;
   letter-spacing: 0.2rem;
 }
+
+.leyendaInOut {
+  font-size: 1.3rem;
+  color: rgb(84, 84, 84);
+  text-transform: uppercase;
+}
+
+.leyendahabs {
+  font-size: 1.3rem;
+  text-transform: uppercase;
+  text-decoration: underline;
+  padding-top: 1rem;
+}

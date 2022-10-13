@@ -3,7 +3,6 @@ import { Habitaciones } from '../Habitaciones'
 import { DateTime, Duration} from "luxon";
 import ItemList from './ItemList';
 import styles from './item.module.css'
-// import { Button } from 'react-bootstrap';
 
 // Este componente filtra las habitaciones segun la disponibilidad (fechas enviadas como props por el buscador)
 const ItemListContainer = ({consulta}) => {
@@ -60,13 +59,12 @@ const ItemListContainer = ({consulta}) => {
 
   return (
     <div className={styles.itemListContainer}>
-        {/* <Button variant="primary">Item List Container</Button>{' '} */}
         {habDispo.length === 0 ?
           <p>No hay habitaciones disponibles</p>
           :
           <>
-          <h3>Check In: {fechaIn.toLocaleString()} - Check Out: {fechaOut.toLocaleString()}</h3>
-          <h4>Habitaciones disponibles:</h4>
+          <h3 className='leyendaInOut'>Check In: {fechaIn.toLocaleString()} - Check Out: {fechaOut.toLocaleString()}</h3>
+          <h4 className='leyendahabs'>Habitaciones disponibles:</h4>
           <ItemList habitaciones={habDispo} />
           </>
         }
