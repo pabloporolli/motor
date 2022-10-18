@@ -8,25 +8,13 @@ const Main = () => {
     <main >
     <Routes>
       <Route
-        path = "/"
-        element = {<Buscador />}
-      />
-{/*        <Route
-        path = "/consulta"
-        element = {<ItemListContainer />}
-       /> */}
-{/*        <Route
-        path = "/detail/:idProd"
-        element = {}
+        path="/"
+        element={<Buscador />}
       />
       <Route
-        path = "/cart"
-        element = {}
+        path="/consulta"
+        element={<ItemListContainer />}
       />
-      <Route
-        path = '/compra'
-        element = {}
-      /> */}
     </Routes>
     </main>
   )

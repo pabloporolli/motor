@@ -4,7 +4,19 @@ import styles from './item.module.css'
 
 const ItemList = ({habitaciones}) => {
   return (
-    <table className={styles.tablaHabitaciones}>
+    <>
+            {habitaciones.map((hab)=>
+            <Item hab={hab} key={hab.name}/>)}
+    </>
+  )
+}
+
+export default ItemList
+
+
+
+
+{/*      <table className={styles.tablaHabitaciones}>
         <thead>
             <tr>
                 <th></th>
@@ -14,12 +26,4 @@ const ItemList = ({habitaciones}) => {
                 <th>Total No Reembolsable</th>
             </tr>
         </thead>
-        <tbody>
-            {habitaciones.map((hab)=>
-            <Item hab={hab} key={hab.name}/>)}
-        </tbody>
-    </table>
-  )
-}
-
-export default ItemList
+        <tbody> */}

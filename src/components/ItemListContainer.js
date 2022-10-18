@@ -1,11 +1,19 @@
-import React from 'react'
+import React, { useContext } from 'react'
 import { Habitaciones } from '../Habitaciones'
 import { DateTime, Duration} from "luxon";
 import ItemList from './ItemList';
 import styles from './item.module.css'
+import Buscador from '../Buscador';
+import { BuscadorContext } from '../context/BuscadorContext';
 
 // Este componente filtra las habitaciones segun la disponibilidad (fechas enviadas como props por el buscador)
-const ItemListContainer = ({consulta}) => {
+const ItemListContainer = () => {
+
+
+  // Se importa el contexto
+  const {consulta} = useContext (BuscadorContext);
+
+  console.log("Consulta desde ItemListContainer", consulta);
 
   // Esas fechas serán reemplazadas por las que lleguen por props
   const fechaIn = DateTime.fromISO(consulta.fechaIn)
@@ -57,7 +65,11 @@ const ItemListContainer = ({consulta}) => {
 
   chequearHabDisponibles()
 
+const desdeItemList = true;
+
   return (
+    <div>
+      <Buscador desdeItemList = {desdeItemList}/>
     <div className={styles.itemListContainer}>
         {habDispo.length === 0 ?
           <p>No hay habitaciones disponibles</p>
@@ -68,6 +80,7 @@ const ItemListContainer = ({consulta}) => {
           <ItemList habitaciones={habDispo} />
           </>
         }
+    </div>
     </div>
   )
 }

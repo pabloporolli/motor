@@ -7,17 +7,18 @@ import 'bootstrap/dist/css/bootstrap.min.css';
 import './index.css';
 import Carousel from './Carousel';
 import Buscador from './Buscador';
+import BuscadorProvider from './context/BuscadorContext';
 
 const App = () => {
   return (
-    <>
-      <BrowserRouter>
-        <Header />
-        <Carousel/>
-        <Main />
-        <Footer/>
-      </BrowserRouter>
-  </>
+      <BuscadorProvider>
+        <BrowserRouter>
+          <Header />
+          <Carousel/>
+          <Main />
+          <Footer/>
+        </BrowserRouter>
+      </BuscadorProvider>
   );
 }
 

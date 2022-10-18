@@ -37,8 +37,13 @@ body {
   text-transform: uppercase;
 }
 
-.botonConsultar:hover {
-  color: gray;
+.botonConsultar a {
+  text-decoration: none;
+  color: white;
+}
+
+.botonConsultar a:hover {
+  color: lightgray;
 }
 
 .tituloConsulta {
@@ -57,4 +62,39 @@ body {
   text-transform: uppercase;
   text-decoration: underline;
   padding-top: 1rem;
+}
+
+.tarjeta {
+  margin-top: 2rem;
+}
+
+.footerTarjeta {
+  background-color: black !important;
+}
+
+.masInfo {
+  color: white;
+}
+
+.botonReservar {
+  margin-left: 1rem;
+  border-style: none;
+  background-color: black;
+  color: lightgreen;
+  text-transform: uppercase;
+  letter-spacing: 0.2rem;
+  padding: 0.3rem;
+  padding-left: 1rem;
+  padding-right: 1rem;
+}
+
+.seccionTarifas {
+  margin-top: 1rem;
+}
+
+.tituloHab {
+  text-transform: uppercase;
+  font-weight: bolder !important;
+  letter-spacing: 0.2rem;
+  color: black;
 }

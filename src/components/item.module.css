@@ -13,8 +13,7 @@
 
 .btnReadMore {
     border: none;
-    background-color: white;
-    text-decoration: underline;
-    color: blue
+    background-color: black;
+    color: lightgray;
 
 }
